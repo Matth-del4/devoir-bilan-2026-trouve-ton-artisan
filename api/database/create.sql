@@ -16,11 +16,12 @@ CREATE TABLE specialite (
 CREATE TABLE artisan (
     id INT AUTO_INCREMENT PRIMARY KEY, 
     nom VARCHAR(255) NOT NULL,
-    note DECIMAL(2.1) NOT NULL,
+    note DECIMAL(3.1) NOT NULL,
     ville VARCHAR(255) NOT NULL,
     mail VARCHAR(255) NOT NULL,
     site_web VARCHAR(255),
     a_propos TEXT NOT NULL,
+    `top` BOOLEAN NOT NULL,
     specialite_id INT NOT NULL,
     FOREIGN KEY (specialite_id) REFERENCES specialite(id)
-)
+);
