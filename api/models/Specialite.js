@@ -15,5 +15,8 @@ const Specialite = sequelize.define("Specialite", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+}, {
+  tableName: "specialite",
+  timestamps: false,
 });
 module.exports = Specialite;
