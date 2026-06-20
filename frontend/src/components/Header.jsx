@@ -45,7 +45,7 @@ function Header() {
       {isMenuOpen && (
         <nav>
           {categories.map((category) => (
-            <Link key={category.id} to={`/category/${category.id}`}>
+            <Link key={category.id} to={`/categorie/${category.id}`}>
               {category.domaine}
             </Link>
           ))}

@@ -20,7 +20,7 @@ function ListeArtisans() {
         setArtisans(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching artisans:", error);
+        console.error("Erreur lors de la récupération de l'artisan :", error);
       });
   }, [id]);
   return (
