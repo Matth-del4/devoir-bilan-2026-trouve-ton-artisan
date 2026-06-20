@@ -63,7 +63,9 @@ router.get("/search", async (req, res) => {
 router.get("/:id", async (req, res) => {
   const artisanId = req.params.id;
   try {
-    const artisan = await Artisan.findByPk(artisanId);
+    const artisan = await Artisan.findByPk(artisanId, {
+      include: [{ model: Specialite }],
+    });
     if (!artisan) {
       return res.status(404).json({ message: "Artisan non trouvé." });
     }
