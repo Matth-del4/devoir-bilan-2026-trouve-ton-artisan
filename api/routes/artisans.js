@@ -7,7 +7,10 @@ const { Op } = require("sequelize");
 // Route page d'accueil avec top artisans
 router.get("/top", async (req, res) => {
   try {
-    const artisans = await Artisan.findAll({ where: { top: true } });
+    const artisans = await Artisan.findAll({
+      where: { top: true },
+      include: [{ model: Specialite }],
+    });
     res.json(artisans);
   } catch (error) {
     console.error("Erreur lors de la récupération des artisans :", error);

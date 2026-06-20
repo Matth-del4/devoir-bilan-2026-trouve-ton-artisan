@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import CardArtisan from "../components/CardArtisan";
 
 function Accueil() {
   const [artisans, setArtisans] = useState([]);
@@ -38,15 +39,15 @@ function Accueil() {
 
         <section>
           <h2>Les 3 artisans du mois</h2>
-          <ul>
-            {artisans.map((artisan) => (
-              <li key={artisan.id}>
-                <h3>{artisan.nom}</h3>
-                <p>Note : {artisan.note}</p>
-                <p>{artisan.ville}</p>
-              </li>
-            ))}
-          </ul>
+          {artisans.map((artisan) => (
+            <CardArtisan
+              key={artisan.id}
+              nom={artisan.nom}
+              note={artisan.note}
+              ville={artisan.ville}
+              specialite={artisan.Specialite.metier}
+            />
+          ))}
         </section>
       </main>
       <Footer />
