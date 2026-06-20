@@ -32,6 +32,7 @@ function ListeArtisans() {
           {artisans.map((artisan) => (
             <CardArtisan
               key={artisan.id}
+              id={artisan.id}
               nom={artisan.nom}
               note={artisan.note}
               ville={artisan.ville}

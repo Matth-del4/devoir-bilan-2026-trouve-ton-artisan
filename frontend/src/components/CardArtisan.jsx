@@ -1,11 +1,14 @@
-function CardArtisan({ nom, note, specialite, ville }) {
+import { Link } from "react-router-dom";
+
+function CardArtisan({ nom, id, note, specialite, ville }) {
   return (
-    <div className="card-artisan">
+    <Link to={`/artisans/${id}`} className="card-artisan">
       <h3>{nom}</h3>
       <p>Note : {note}</p>
       <p>Spécialité : {specialite}</p>
       <p>Ville : {ville}</p>
-    </div>
+    </Link>
   );
 }
+
 export default CardArtisan;
