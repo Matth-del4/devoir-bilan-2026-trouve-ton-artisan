@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../styles/header.scss";
 
 function Header() {
   const navigate = useNavigate();

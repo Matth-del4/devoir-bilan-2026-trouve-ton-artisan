@@ -4,7 +4,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import CardArtisan from "../components/CardArtisan";
+import "../styles/main.scss";
 
+// Page d'accueil de l'application
 function Accueil() {
   const [artisans, setArtisans] = useState([]);
 
@@ -23,6 +25,7 @@ function Accueil() {
       });
   }, []);
 
+  // Rendu de la page d'accueil
   return (
     <div>
       <Header />
@@ -39,16 +42,18 @@ function Accueil() {
 
         <section>
           <h2>Les 3 artisans du mois</h2>
-          {artisans.map((artisan) => (
-            <CardArtisan
-              key={artisan.id}
-              id={artisan.id}
-              nom={artisan.nom}
-              note={artisan.note}
-              ville={artisan.ville}
-              specialite={artisan.Specialite.metier}
-            />
-          ))}
+          <div className="d-flex gap-3 justify-content-center">
+            {artisans.map((artisan) => (
+              <CardArtisan
+                key={artisan.id}
+                id={artisan.id}
+                nom={artisan.nom}
+                note={artisan.note}
+                ville={artisan.ville}
+                specialite={artisan.Specialite.metier}
+              />
+            ))}
+          </div>
         </section>
       </main>
       <Footer />
