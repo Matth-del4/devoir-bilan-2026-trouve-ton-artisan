@@ -1,12 +1,12 @@
-@use "variables" as *;
-
 .card-artisan {
-  background-color: $light;
+  display: block;
+  text-decoration: none;
+  background-color: white;
   border: 1px solid $dark;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  border-radius: 0.5rem;
 
   h3 {
     color: $primary;
@@ -16,5 +16,9 @@
   p {
     color: $dark;
     margin-bottom: 0.5rem;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }

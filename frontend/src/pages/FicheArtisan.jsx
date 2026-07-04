@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import "../styles/FicheArtisan.scss";
+import { renderEtoiles } from "../utils/etoiles";
 
 function FicheArtisan() {
   const { id } = useParams();
@@ -48,9 +50,12 @@ function FicheArtisan() {
         {artisan && (
           <section>
             <h2>{artisan.nom}</h2>
-            <p>Note: {artisan.note}</p>
+            <p>{renderEtoiles(artisan.note)}</p>
             <p>Ville: {artisan.ville}</p>
             <p>Spécialité: {artisan.Specialite.metier}</p>
+            <p>
+              <strong>À propos :</strong> {artisan.a_propos}
+            </p>
           </section>
         )}
         <section>

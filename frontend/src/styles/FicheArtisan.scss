@@ -1,0 +1,24 @@
+@use "variables" as *;
+
+form {
+  input,
+  textarea {
+    background-color: white;
+    color: $dark;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid $dark;
+    border-radius: 0.5rem;
+  }
+
+  button {
+    background-color: $primary;
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+}

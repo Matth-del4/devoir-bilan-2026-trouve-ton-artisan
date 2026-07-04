@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import CardArtisan from "../components/CardArtisan";
+import "../styles/main.scss";
 
 function ListeArtisans() {
   const { id } = useParams();
@@ -29,16 +30,20 @@ function ListeArtisans() {
       <main>
         <section>
           <h2>Artisans de la catégorie {id}</h2>
-          {artisans.map((artisan) => (
-            <CardArtisan
-              key={artisan.id}
-              id={artisan.id}
-              nom={artisan.nom}
-              note={artisan.note}
-              ville={artisan.ville}
-              specialite={artisan.Specialite.metier}
-            />
-          ))}
+          <div className="row">
+            {artisans.map((artisan) => (
+              <div className="col-md-6 col-lg-4" key={artisan.id}>
+                <CardArtisan
+                  key={artisan.id}
+                  id={artisan.id}
+                  nom={artisan.nom}
+                  note={artisan.note}
+                  ville={artisan.ville}
+                  specialite={artisan.Specialite.metier}
+                />
+              </div>
+            ))}
+          </div>
         </section>
       </main>
       <Footer />
