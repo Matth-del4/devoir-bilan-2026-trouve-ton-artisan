@@ -6,17 +6,17 @@ function Footer() {
     <footer>
       <div className="container">
         <div className="row">
-          <div className="col-4">
+          <div className="col-12 col-md-4">
             <p>101 cours Charlemagne</p>
             <p>CS 20033</p>
             <p>69269 Lyon Cedex 02</p>
             <p>France</p>
             <p>+33 (0)4 26 73 40 00</p>
           </div>
-          <div className="col-4 text-center">
-            <p>Trouve ton artisan !</p>
+          <div className="col-12 col-md-4 text-center">
+            <img src="/Logo.png" alt="Trouve ton artisan" />
           </div>
-          <div className="col-4 text-end">
+          <div className="col-12 col-md-4 text-end">
             <Link to="/mentions-legales">Mentions Légales</Link>
             <Link to="/donnees-personnelles">Données personnelles</Link>
             <Link to="/accessibilite">Accessibilité</Link>

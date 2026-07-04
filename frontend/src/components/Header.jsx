@@ -30,10 +30,10 @@ function Header() {
   return (
     <header>
       <button
-        className="menu-button"
+        className="menu-button d-md-none"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        Menu
+        ☰
       </button>
 
       <input
@@ -50,12 +50,13 @@ function Header() {
 
       <nav>
         <Link to="/">
-          <h1>Trouve ton artisan</h1>
+          <img src="/Logo.png" alt="Trouve ton artisan" />
         </Link>
       </nav>
 
+      {/* Menu déroulant - visible uniquement sur mobile quand burger cliqué */}
       {isMenuOpen && (
-        <nav>
+        <nav className="d-md-none">
           {categories.map((category) => (
             <Link key={category.id} to={`/categorie/${category.id}`}>
               {category.domaine}
@@ -63,6 +64,15 @@ function Header() {
           ))}
         </nav>
       )}
+
+      {/* Menu desktop - visible uniquement sur grand écran */}
+      <nav className="d-none d-md-flex gap-3">
+        {categories.map((category) => (
+          <Link key={category.id} to={`/categorie/${category.id}`}>
+            {category.domaine}
+          </Link>
+        ))}
+      </nav>
     </header>
   );
 }

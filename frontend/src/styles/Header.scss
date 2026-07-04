@@ -1,6 +1,25 @@
 @use "variables" as *;
 
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+
+    img {
+      height: 40px;
+    }
+
+    input {
+      width: 100%;
+      order: 3;
+    }
+  }
+}
+
 header {
+  img {
+    height: 150px;
+    width: auto;
+  }
   background-color: $primary;
   padding: 1rem;
   display: flex;
@@ -24,10 +43,16 @@ h1 {
 }
 
 // styles pour barre de recherche
-input {
-  border-radius: 20px;
-  border: none;
-  padding: 0.5rem 1rem;
+input,
+textarea {
+  background-color: white;
+  color: $dark;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid $dark;
+  border-radius: 0.5rem;
 }
 
 nav:last-child {
@@ -43,5 +68,18 @@ nav:last-child {
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+.d-md-none {
+  background-color: $primary;
+  width: 100%;
+  padding: 1rem;
+
+  a {
+    color: white;
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
   }
 }

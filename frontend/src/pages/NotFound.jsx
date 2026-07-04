@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import "../styles/main.scss";
 
 function NotFound() {
   return (
@@ -7,7 +8,7 @@ function NotFound() {
       <Header />
       <main>
         <h1>Page non trouvée</h1>
-        <img src="/images/404.png" alt="Page non trouvée" />
+        <img src="/favicon-32.png" alt="Page non trouvée" />
         <p>La page que vous recherchez n'existe pas.</p>
       </main>
       <Footer />
