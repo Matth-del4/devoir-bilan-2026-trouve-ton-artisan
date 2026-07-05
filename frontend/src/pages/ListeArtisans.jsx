@@ -12,7 +12,7 @@ function ListeArtisans() {
   const [artisans, setArtisans] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/artisans/categorie/${id}`, {
+      .get(`${import.meta.env.VITE_API_URL}/api/artisans/categorie/${id}`, {
         headers: {
           "x-api-key": import.meta.env.VITE_API_KEY,
         },

@@ -12,7 +12,7 @@ function Accueil() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/artisans/top", {
+      .get(`${import.meta.env.VITE_API_URL}/api/artisans/top`, {
         headers: {
           "x-api-key": import.meta.env.VITE_API_KEY,
         },

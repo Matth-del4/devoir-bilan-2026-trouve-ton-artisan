@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../styles/header.scss";
+import "../styles/Header.scss";
 
 function Header() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ function Header() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/categories", {
+      .get(`${import.meta.env.VITE_API_URL}/api/categories`, {
         headers: {
           "x-api-key": import.meta.env.VITE_API_KEY,
         },

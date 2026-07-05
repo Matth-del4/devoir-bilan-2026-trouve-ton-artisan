@@ -31,7 +31,7 @@ function FicheArtisan() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/artisans/${id}`, {
+      .get(`${import.meta.env.VITE_API_URL}/api/artisans/${id}`, {
         headers: {
           "x-api-key": import.meta.env.VITE_API_KEY,
         },

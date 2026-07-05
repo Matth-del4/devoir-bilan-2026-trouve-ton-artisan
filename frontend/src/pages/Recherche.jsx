@@ -12,11 +12,14 @@ function Recherche() {
   const searchQuery = searchParams.get("search");
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/artisans/search?search=${searchQuery}`, {
-        headers: {
-          "x-api-key": import.meta.env.VITE_API_KEY,
+      .get(
+        `${import.meta.env.VITE_API_URL}/api/artisans/search?search=${searchQuery}`,
+        {
+          headers: {
+            "x-api-key": import.meta.env.VITE_API_KEY,
+          },
         },
-      })
+      )
       .then((response) => {
         setArtisans(response.data);
       });
